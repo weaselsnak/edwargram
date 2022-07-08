@@ -1,4 +1,4 @@
-let words = ["INFLUENCE", "BARGAINED", "ENCRICLES", "DESPAIRED", "BELITTLES", "CAMPFIRES", "AMBERGRIS", "BARNACLES", "HEADLOCKS","FESTIVITY"]
+let words = ["INFLUENCE", "BARGAINED", "ENCIRCLES", "DESPAIRED", "BELITTLES", "CAMPFIRES", "AMBERGRIS", "BARNACLES", "HEADLOCKS","FESTIVITY"]
 let scrambleds= ["LCFENUNIE", "IEAANDRBG", "SLCINRECE", "EEIDPADRS", "ELTTLESBI", "ISCPRFAEM", "GMSIERRBA", "AACLRNEBS", "DSHLKOEAC", "YTETIFSVI"]
 
 function fillTable(word) {
@@ -14,9 +14,7 @@ function fillTable(word) {
 
 function checkWord() {
     word = document.getElementById("anagrammed").value
-    if (word.length < 9) {
-        alert("9 letters only")
-        document.getElementById("anagrammed").value = "";
+    if (word.length == 0) {
         return
     }
     console.log(days);
@@ -34,12 +32,6 @@ function getNumberOfDays(date1, date2) {
     const diffInDays = Math.round(diffInTime / oneDay);
     return diffInDays;
 }
-
-document.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-        checkWord()
-    }
-});
 
 let days;
 const wordInput = document.getElementById('anagrammed');
