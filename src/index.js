@@ -129,13 +129,11 @@ const scrambleds= ["LCFENUNIE", "IEAANDRBG", "SLCINRECE", "EEIDPADRS", "ELTTLESB
 "TESBSOBNI"]
 
 function fillTable(word) {
-    const table = document.querySelector("table")
-    let count = 0;
-    for (let i = 0; i < table.rows.length; i++) {
-        for (let j= 0; j < table.rows[i].cells.length; j++) {
-            table.rows[i].cells[j].firstChild.innerText = word[count];
-            count ++;
-        }
+    const grid = document.querySelector(".grid")
+    let i = 0
+    for (cell of grid.children) {
+        cell.innerText = word[i];
+        i++;
     }
 }
 
