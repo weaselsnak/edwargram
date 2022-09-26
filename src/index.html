@@ -6,25 +6,17 @@
     <link href="./index.css" rel="stylesheet">
   </head>
   <body>
-    <table class="w-60 mx-auto my-2 border-collapse text-7xl font-semibold">
-      <tbody>
-        <tr>
-          <td class="border-4 border-black"><div class="m-2 w-[20vmin] text-[20vmin] text-center aspect-square"></div></td>
-          <td class="border-4 border-black"><div class="m-2 w-[20vmin] text-[20vmin] text-center aspect-square"></div></td>
-          <td class="border-4 border-black"><div class="m-2 w-[20vmin] text-[20vmin] text-center aspect-square"></div></td>
-        </tr>
-        <tr>
-          <td class="border-4 border-black"><div class="m-2 w-[20vmin] text-[20vmin] text-center aspect-square"></div></td>
-          <td class="border-4 border-black"><div class="m-2 w-[20vmin] text-[20vmin] text-center aspect-square"></div></td>
-          <td class="border-4 border-black"><div class="m-2 w-[20vmin] text-[20vmin] text-center aspect-square"></div></td>
-        </tr>
-        <tr>
-          <td class="border-4 border-black"><div class="m-2 w-[20vmin] text-[20vmin] text-center aspect-square"></div></td>
-          <td class="border-4 border-black"><div class="m-2 w-[20vmin] text-[20vmin] text-center aspect-square"></div></td>
-          <td class="border-4 border-black"><div class="m-2 w-[20vmin] text-[20vmin] text-center aspect-square"></div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="grid grid-cols-3 mx-auto w-60 my-2 text-7xl font-semibold text-center border-2 border-black gap-0">
+      <div class="border-2 h-20 w-20 border-black">A</div>
+      <div class="border-2 h-20 w-20 border-black">B</div>
+      <div class="border-2 h-20 w-20 border-black">C</div>
+      <div class="border-2 h-20 w-20 border-black">D</div>
+      <div class="border-2 h-20 w-20 border-black">E</div>
+      <div class="border-2 h-20 w-20 border-black">F</div>
+      <div class="border-2 h-20 w-20 border-black">G</div>
+      <div class="border-2 h-20 w-20 border-black">H</div>
+      <div class="border-2 h-20 w-20 border-black">I</div>
+    </div>
     <form onsubmit="checkWord(event)">
       <input id="anagrammed" class="uppercase placeholder:lowercase placeholder:text-lg w-60 text-center placeholder:italic placeholder:text-slate-400 block bg-white mx-auto border border-slate-300 rounded-md py-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-3xl" placeholder="9 letters only..." type="text" name="search" maxlength="9" autocomplete="off" pattern="[A-Za-z]{9}" title="Nine letter word"/>
       <input type= "submit" class="bg-blue-500 w-sm block mx-auto my-2 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline" value="Try Me">
