@@ -6,21 +6,22 @@
     <link href="./index.css" rel="stylesheet">
   </head>
   <body>
-    <div class="grid grid-cols-3 mx-auto w-60 my-2 text-7xl font-semibold text-center">
-      <div class="border-2 h-20 w-20 border-black"></div>
-      <div class="border-2 h-20 w-20 border-black"></div>
-      <div class="border-2 h-20 w-20 border-black"></div>
-      <div class="border-2 h-20 w-20 border-black"></div>
-      <div class="border-2 h-20 w-20 border-black"></div>
-      <div class="border-2 h-20 w-20 border-black"></div>
-      <div class="border-2 h-20 w-20 border-black"></div>
-      <div class="border-2 h-20 w-20 border-black"></div>
-      <div class="border-2 h-20 w-20 border-black"></div>
+    <div class="grid grid-cols-3 mx-auto w-[15.2rem] my-2 text-7xl border-2 border-black font-semibold text-center">
+      <div class="border-2 border-black order-1 w-20 h-20"></div>
+      <div class="border-2 border-black order-2 w-20 h-20"></div>
+      <div class="border-2 border-black order-3 w-20 h-20"></div>
+      <div class="border-2 border-black order-4 w-20 h-20"></div>
+      <div class="border-2 border-black order-5 w-20 h-20"></div>
+      <div class="border-2 border-black order-6 w-20 h-20"></div>
+      <div class="border-2 border-black order-7 w-20 h-20"></div>
+      <div class="border-2 border-black order-8 w-20 h-20"></div>
+      <div class="border-2 border-black order-9 w-20 h-20"></div>
     </div>
     <form onsubmit="checkWord(event)">
       <input id="anagrammed" class="uppercase placeholder:lowercase placeholder:text-lg w-60 text-center placeholder:italic placeholder:text-slate-400 block bg-white mx-auto border border-slate-300 rounded-md py-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-3xl" placeholder="9 letters only..." type="text" name="search" maxlength="9" autocomplete="off" pattern="[A-Za-z]{9}" title="Nine letter word"/>
       <input type= "submit" class="bg-blue-500 w-sm block mx-auto my-2 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline" value="Try Me">
+      <button type= "button" class="bg-blue-500 w-sm block mx-auto my-2 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Shuffle</button>
     </form>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

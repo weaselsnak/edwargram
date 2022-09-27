@@ -131,7 +131,7 @@ const scrambleds= ["LCFENUNIE", "IEAANDRBG", "SLCINRECE", "EEIDPADRS", "ELTTLESB
 function fillTable(word) {
     const grid = document.querySelector(".grid")
     let i = 0
-    for (cell of grid.children) {
+    for (const cell of grid.children) {
         cell.innerText = word[i];
         i++;
     }
@@ -159,6 +159,21 @@ function getNumberOfDays(date1, date2) {
     return diffInDays;
 }
 
+function shuffle() {
+    const originals = ['order-1','order-2','order-3','order-4','order-5','order-6','order-7','order-8','order-9'];
+    const cells = originals.map(original => document.getElementsByClassName(original)[0]);
+    const shuffled = [...originals].sort(() => Math.random() - 0.5);
+
+    for (let i=0; i < cells.length; i++) {
+        const target = shuffled[i];
+        const original = originals[i];
+        const cell = cells[i];
+        cell.classList.remove(original);
+        cell.classList.add(target);
+    }
+}
+
+
 let days;
 const wordInput = document.getElementById('anagrammed');
 const beginning = new Date('2022-07-07')
@@ -167,3 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
     days = getNumberOfDays(beginning, now);
     fillTable(scrambleds[days])
 }, false);
+
+let shuffleButton = document.querySelector("button");
+shuffleButton.addEventListener("click", () => {
+    shuffle();
+});
