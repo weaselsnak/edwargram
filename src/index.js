@@ -162,8 +162,12 @@ function fillTable(word) {
     }
 }
 
-function checkWord(e) {
+document.querySelector("form").addEventListener("submit", function(e){
     e.preventDefault();
+    checkWord();
+});
+
+function checkWord() {
     const word = document.getElementById("anagrammed").value;
     if (word.length == 0) {
         return
@@ -208,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fillTable(scrambleds[days])
 }, false);
 
-let shuffleButton = document.querySelector("button");
+let shuffleButton = document.getElementById("shuffleButton");
 shuffleButton.addEventListener("click", () => {
     shuffle();
-});
+}, false);
