@@ -278,7 +278,7 @@ function checkWord() {
     if (word.toLowerCase() === words[days].toLowerCase()) {
         alert("Very nice!")
     } else {
-        alert("Very bad");
+        alert("Unfortunately that's not an edwargram, please try again");
         const inputField = document.getElementById("anagrammed")
         inputField.select();
     }
