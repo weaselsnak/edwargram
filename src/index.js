@@ -257,9 +257,9 @@ const scrambleds= ["LCFENUNIE", "IEAANDRBG", "SLCINRECE", "EEIDPADRS", "ELTTLESB
 ]
 
 function fillTable(word) {
-    const grid = document.querySelector(".grid")
+    const cells = document.querySelectorAll(".cells")
     let i = 0
-    for (const cell of grid.children) {
+    for (const cell of cells) {
         cell.innerText = word[i];
         i++;
     }
@@ -278,7 +278,7 @@ function checkWord() {
     if (word.toLowerCase() === words[days].toLowerCase()) {
         alert("Very nice!")
     } else {
-        alert("Unfortunately that's not an edwargram, please try again");
+        alert("Very bad");
         const inputField = document.getElementById("anagrammed")
         inputField.select();
     }
@@ -291,11 +291,20 @@ function getNumberOfDays(date1, date2) {
     return diffInDays;
 }
 
-function shuffle() {
-    const originals = ['order-1','order-2','order-3','order-4','order-5','order-6','order-7','order-8','order-9'];
-    const cells = originals.map(original => document.getElementsByClassName(original)[0]);
-    const shuffled = [...originals].sort(() => Math.random() - 0.5);
+function fyShuffle(arr) {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    const randIndex = Math.floor(Math.random() * i);
+    const temp = arr[randIndex];
+    arr[randIndex] = arr[i];
+    arr[i] = temp;
+  }
+  return arr;
+}
 
+function shuffle() {
+    const originals = ['cell-1','cell-2','cell-3','cell-4','cell-5','cell-6','cell-7','cell-8','cell-9'];
+    const cells = originals.map(original => document.getElementsByClassName(original)[0]);
+    const shuffled = fyShuffle([...originals]);
     for (let i=0; i < cells.length; i++) {
         const target = shuffled[i];
         const original = originals[i];
@@ -305,10 +314,9 @@ function shuffle() {
     }
 }
 
-
 let days;
 const wordInput = document.getElementById('anagrammed');
-const beginning = new Date('2022-11-30')
+const beginning = new Date("2023-03-05 00:00:00")
 document.addEventListener('DOMContentLoaded', () => {
     const now = new Date()
     days = getNumberOfDays(beginning, now);

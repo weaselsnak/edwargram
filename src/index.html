@@ -4,18 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./index.css" rel="stylesheet">
+<style>
+.cells {
+    transition-property: left, top, margin;
+    transition-duration: 1s;
+}
+.cell-1 {
+    left: 0px;
+    top: 0px;
+}
+.cell-2 {
+    left: 80px;
+    top: 0px;
+}
+.cell-3 {
+    left: 160px;
+    top: 0px;
+}
+.cell-4 {
+    left: 0px;
+    top: 80px;
+}
+.cell-5 {
+    left: 80px;
+    top: 80px;
+}
+.cell-6 {
+    left: 160px;
+    top: 80px;
+}
+.cell-7 {
+    left: 0px;
+    top: 160px;
+}
+.cell-8 {
+    left: 80px;
+    top: 160px;
+}
+.cell-9 {
+    left: 160px;
+    top: 160px;
+}
+.cell-2, .cell-5, .cell-8 {
+    margin-left: -1px;
+}
+.cell-3, .cell-6, .cell-9 {
+    margin-left: -2px;
+}
+.cell-4, .cell-5, .cell-6 {
+    margin-top: -1px;
+}
+.cell-7, .cell-8, .cell-9 {
+    margin-top: -2px;
+}
+</style>
   </head>
   <body>
-    <div class="grid grid-cols-3 mx-auto w-[15.2rem] my-2 text-7xl border-2 border-black font-semibold text-center">
-      <div class="border-2 border-black order-1 w-20 h-20"></div>
-      <div class="border-2 border-black order-2 w-20 h-20"></div>
-      <div class="border-2 border-black order-3 w-20 h-20"></div>
-      <div class="border-2 border-black order-4 w-20 h-20"></div>
-      <div class="border-2 border-black order-5 w-20 h-20"></div>
-      <div class="border-2 border-black order-6 w-20 h-20"></div>
-      <div class="border-2 border-black order-7 w-20 h-20"></div>
-      <div class="border-2 border-black order-8 w-20 h-20"></div>
-      <div class="border-2 border-black order-9 w-20 h-20"></div>
+    <div class="relative h-60 w-60 mx-auto my-2 text-7xl font-semibold text-center">
+      <div class="cells cell-1 absolute border-2 border-black w-20 h-20"></div>
+      <div class="cells cell-2 absolute border-2 border-black w-20 h-20"></div>
+      <div class="cells cell-3 absolute border-2 border-black w-20 h-20"></div>
+      <div class="cells cell-4 absolute border-2 border-black w-20 h-20"></div>
+      <div class="cells cell-5 absolute border-2 border-black w-20 h-20"></div>
+      <div class="cells cell-6 absolute border-2 border-black w-20 h-20"></div>
+      <div class="cells cell-7 absolute border-2 border-black w-20 h-20"></div>
+      <div class="cells cell-8 absolute border-2 border-black w-20 h-20"></div>
+      <div class="cells cell-9 absolute border-2 border-black w-20 h-20"></div>
     </div>
     <form>
       <input id="anagrammed" class="uppercase placeholder:lowercase placeholder:text-lg w-60 text-center placeholder:italic placeholder:text-slate-400 block bg-white mx-auto border border-slate-300 rounded-md py-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-3xl" placeholder="9 letters only..." type="text" name="search" maxlength="9" autocomplete="off" pattern="[A-Za-z]{9}" title="Nine letter word"/>
