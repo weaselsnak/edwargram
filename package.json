@@ -13,5 +13,8 @@
     "parcel": "^2.6.1",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.4"
+  },
+  "dependencies": {
+    "@parcel/transformer-inline-string": "^2.8.3"
   }
 }

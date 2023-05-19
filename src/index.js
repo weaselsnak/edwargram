@@ -270,18 +270,28 @@ document.querySelector("form").addEventListener("submit", function(e){
     checkWord();
 });
 
-function checkWord() {
+import data from 'bundle-text:../static/words.txt';
+
+async function checkWord() {
     const word = document.getElementById("anagrammed").value;
+    const inputField = document.getElementById("anagrammed")
     if (word.length == 0) {
         return
     }
-    if (word.toLowerCase() === words[days].toLowerCase()) {
-        alert("Very nice!")
-    } else {
-        alert("Very bad");
-        const inputField = document.getElementById("anagrammed")
-        inputField.select();
+    const words = data.split("\n");
+    for (let i= 0; i < words.length; i ++) {
+        if (words[i] == word) {
+            if (word.length == 9) {
+                alert("Extremely nice")
+            } else {
+                alert("Very nice")
+            }
+            inputField.select();
+            return
+        }
     }
+    alert("Very bad");
+    inputField.select();
 }
 
 function getNumberOfDays(date1, date2) {
