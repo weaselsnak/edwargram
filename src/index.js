@@ -256,13 +256,18 @@ const scrambleds= ["LCFENUNIE", "IEAANDRBG", "SLCINRECE", "EEIDPADRS", "ELTTLESB
 "TUBTMRYEI"
 ]
 
-function fillTable(word) {
+let dictionary = [];
+
+async function fillTable(word) {
     const cells = document.querySelectorAll(".cells")
     let i = 0
     for (const cell of cells) {
         cell.innerText = word[i];
         i++;
     }
+    const data = await fetch("/words.txt");
+    const words = await data.text();
+    dictionary = words.split("\n");
 }
 
 document.querySelector("form").addEventListener("submit", function(e){
@@ -270,17 +275,14 @@ document.querySelector("form").addEventListener("submit", function(e){
     checkWord();
 });
 
-import data from 'bundle-text:../static/words.txt';
-
-async function checkWord() {
+function checkWord() {
     const word = document.getElementById("anagrammed").value;
     const inputField = document.getElementById("anagrammed")
     if (word.length == 0) {
         return
     }
-    const words = data.split("\n");
-    for (let i= 0; i < words.length; i ++) {
-        if (words[i] == word) {
+    for (let i= 0; i < dictionary.length; i ++) {
+        if (dictionary[i] == word) {
             if (word.length == 9) {
                 alert("Extremely nice")
             } else {
@@ -290,8 +292,8 @@ async function checkWord() {
             return
         }
     }
-    alert("Very bad");
-    inputField.select();
+        alert("Very bad");
+        inputField.select();
 }
 
 function getNumberOfDays(date1, date2) {
