@@ -276,7 +276,7 @@ document.querySelector("form").addEventListener("submit", function(e){
 });
 
 function checkWord() {
-    const word = document.getElementById("anagrammed").value;
+    const word = document.getElementById("anagrammed").value.toLowerCase();
     const inputField = document.getElementById("anagrammed")
     if (word.length == 0) {
         return
