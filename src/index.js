@@ -21,6 +21,9 @@ document.querySelector("form").addEventListener("submit", function(e){
 
 function checkWord() {
     const word = document.getElementById("anagrammed").value.toLowerCase();
+    if (word == "") {
+        return
+    }
     const inputField = document.getElementById("anagrammed")
     for (let i= 0; i < dictionary.length; i ++) {
         if (dictionary[i] == word) {
