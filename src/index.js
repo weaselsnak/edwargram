@@ -42,8 +42,8 @@ function checkWord() {
     }
     for (let i= 0; i < dictionary.length; i ++) {
         if (dictionary[i] == word) {
-            guesses = JSON.parse(localStorage.getItem("guesses"));
-            if (guesses != null) {
+            if (localStorage.getItem("guesses") != null) {
+                guesses = JSON.parse(localStorage.getItem("guesses"))
                 if (guesses[word] == true) {
                     showDialog(alreadyGuessedDialog, inputField);
                     return
