@@ -19,25 +19,47 @@ document.querySelector("form").addEventListener("submit", function(e){
     checkWord();
 });
 
+let correctlyGuessedWords = {};
+
+function showDialog(dialog, inputField) {
+    dialog.show();
+    inputField.value = "";
+    setTimeout(() => {
+        dialog.close();
+    }, 1000);
+
+}
+
+const successDialog = document.getElementById("successDialog");
+const failureDialog = document.getElementById("failureDialog");
+const alreadyGuessedDialog = document.getElementById("alreadyGuessedDialog");
+const nineLetterSuccessDialog = document.getElementById("nineLetterSuccessDialog");
 function checkWord() {
-    const word = document.getElementById("anagrammed").value.toLowerCase();
+    const inputField = document.getElementById("anagrammed")
+    const word = inputField.value.toLowerCase();
     if (word == "") {
         return
     }
-    const inputField = document.getElementById("anagrammed")
     for (let i= 0; i < dictionary.length; i ++) {
         if (dictionary[i] == word) {
-            if (word.length == 9) {
-                alert("Extremely nice")
-            } else {
-                alert("Very nice")
+            guesses = JSON.parse(localStorage.getItem("guesses"));
+            if (guesses != null) {
+                if (guesses[word] == true) {
+                    showDialog(alreadyGuessedDialog, inputField);
+                    return
+                }
             }
-            inputField.select();
+            if (word.length == 9) {
+                showDialog(nineLetterSuccessDialog, inputField);
+            } else {
+                showDialog(successDialog, inputField);
+            }
+            correctlyGuessedWords[word] = true
+            localStorage.setItem("guesses", JSON.stringify(correctlyGuessedWords));
             return
         }
     }
-        alert("Very bad");
-        inputField.select();
+        showDialog(failureDialog, inputField);
 }
 
 function getNumberOfDays(date1, date2) {

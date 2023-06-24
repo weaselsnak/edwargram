@@ -60,22 +60,26 @@
 </style>
   </head>
   <body>
-    <div class="relative h-60 w-60 mx-auto my-2 text-7xl font-semibold text-center">
-      <div class="cells cell-1 absolute border-2 border-black w-20 h-20"></div>
-      <div class="cells cell-2 absolute border-2 border-black w-20 h-20"></div>
-      <div class="cells cell-3 absolute border-2 border-black w-20 h-20"></div>
-      <div class="cells cell-4 absolute border-2 border-black w-20 h-20"></div>
-      <div class="cells cell-5 absolute border-2 border-black w-20 h-20"></div>
-      <div class="cells cell-6 absolute border-2 border-black w-20 h-20"></div>
-      <div class="cells cell-7 absolute border-2 border-black w-20 h-20"></div>
-      <div class="cells cell-8 absolute border-2 border-black w-20 h-20"></div>
-      <div class="cells cell-9 absolute border-2 border-black w-20 h-20"></div>
-    </div>
-        <form>
+      <div class="relative h-60 w-60 mx-auto my-2 text-7xl font-semibold text-center">
+          <div class="cells cell-1 absolute border-2 border-black w-20 h-20"></div>
+          <div class="cells cell-2 absolute border-2 border-black w-20 h-20"></div>
+          <div class="cells cell-3 absolute border-2 border-black w-20 h-20"></div>
+          <div class="cells cell-4 absolute border-2 border-black w-20 h-20"></div>
+          <div class="cells cell-5 absolute border-2 border-black w-20 h-20"></div>
+          <div class="cells cell-6 absolute border-2 border-black w-20 h-20"></div>
+          <div class="cells cell-7 absolute border-2 border-black w-20 h-20"></div>
+          <div class="cells cell-8 absolute border-2 border-black w-20 h-20"></div>
+          <div class="cells cell-9 absolute border-2 border-black w-20 h-20"></div>
+      </div>
+      <form>
           <input id="anagrammed" class="uppercase placeholder:lowercase placeholder:text-lg w-60 text-center placeholder:italic placeholder:text-slate-400 block bg-white mx-auto border border-slate-300 rounded-md py-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-3xl" placeholder="4 letters or more" type="text" name="search" maxlength="9" autocomplete="off" pattern="[A-Za-z]{4,9}"/>
           <input type="submit" class="bg-blue-500 w-sm block mx-auto my-2 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline" value="Try Me">
-        </form>
+      </form>
       <button type="button" id="shuffleButton" class="bg-blue-500 w-sm block mx-auto my-2 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Shuffle</button>
-    <script type="module" src="index.js"></script>
+      <dialog id="nineLetterSuccessDialog">extremely nice!</dialog>
+      <dialog id="successDialog">very nice</dialog>
+      <dialog id="failureDialog">how is that a word</dialog>
+      <dialog id="alreadyGuessedDialog">you've already guessed this you bozo</dialog>
+      <script type="module" src="index.js"></script>
   </body>
 </html>
