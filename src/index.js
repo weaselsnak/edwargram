@@ -43,7 +43,7 @@ function checkWord() {
     for (let i= 0; i < dictionary.length; i ++) {
         if (dictionary[i] == word) {
             if (localStorage.getItem("guesses") != null) {
-                guesses = JSON.parse(localStorage.getItem("guesses"))
+                const guesses = JSON.parse(localStorage.getItem("guesses"))
                 if (guesses[word] == true) {
                     showDialog(alreadyGuessedDialog, inputField);
                     return
